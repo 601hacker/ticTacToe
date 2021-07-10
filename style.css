@@ -1,0 +1,36 @@
+/* Setup */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 10px;
+}
+
+/* Layout */
+
+body {
+    display: grid;
+    grid-template-rows: 15% 1fr;
+    grid-template-columns: ;
+    font-size: 1.8rem;
+    border: 1px solid red;
+    height: 100vh;
+}
+
+header {
+    border: 1px solid red;
+}
+
+main {
+    border: 1px solid red;
+}
+
