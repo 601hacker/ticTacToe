@@ -20,17 +20,55 @@ html {
 body {
     display: grid;
     grid-template-rows: 15% 1fr;
-    grid-template-columns: ;
+    grid-template-columns: 1fr;
     font-size: 1.8rem;
-    border: 1px solid red;
     height: 100vh;
 }
 
 header {
-    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: initial;
+    width: 100%;
 }
 
-main {
-    border: 1px solid red;
+header h1 {
+    margin: 1rem;
 }
+
+header [type='button'] {
+    margin: 1.2rem;
+    padding: 0.8rem;
+}
+
+/* Tic Tac Toe */
+ 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(3, 100px);
+    justify-content: center;
+    align-content: center;
+    height: 60%;
+    width: 100%;
+}
+
+.box {
+    border: 1px solid purple;
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
