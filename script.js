@@ -1,7 +1,9 @@
 let divs = document.querySelectorAll('.box');
 let divsMother = document.querySelector('main .container');
 let victory = document.querySelector('main h1');
-let reset = document.querySelector('header button');
+let playButton = document.querySelector('header div .play');
+let resetButton = document.querySelector('header div .reset');
+let gameHeading = document.querySelector('main h1');
 
 const playerModule = (function() {
     const playerX = function(i, _gameScoreBoard) {
@@ -68,7 +70,7 @@ const winOrLoseOrDraw = (function() {
         logic.rightColumn(_gameScoreBoard) === true ||
         logic.lTRCross(_gameScoreBoard) === true ||
         logic.rTLCross(_gameScoreBoard) === true) {
-            console.log('player1 Wins');
+            // console.log('player1 Wins');
             _winOrLoseDecision = 'X';
             setTimeout(function() {
                 divsMother.style.visibility = 'hidden';
@@ -82,7 +84,7 @@ const winOrLoseOrDraw = (function() {
         logic.rightColumn(_gameScoreBoard) === false ||
         logic.lTRCross(_gameScoreBoard) === false ||
         logic.rTLCross(_gameScoreBoard) === false) {
-            console.log('Player2 Wins');
+            // console.log('Player2 Wins');
             _winOrLoseDecision = 'O';
             setTimeout(function() {
                 divsMother.style.visibility = 'hidden';
@@ -217,30 +219,35 @@ const logic = (function() {
     }
 })();
 
-const reload = (function() {
-    function playAgain() {
-        reset.addEventListener('click', function() {
-            return setTimeout(function() {
-                window.location.reload();
-            }, 1000);
+const startPlaying = (function() {
+    function play() {
+        playButton.addEventListener('click', function() {
+            setTimeout(function() {
+                divsMother.style.visibility = 'visible';
+                gameHeading.style.visibility = 'visible';
+            }, 500);
         });
     }
 
     return {
-        playAgain: playAgain,
+        play: play,
+    }
+})();
+
+const resetting = (function() {
+    function reset() {
+        resetButton.addEventListener('click', function() {
+            setTimeout(function() {
+                window.location.reload();
+            });
+        }); 
+}
+    
+    return {
+        reset: reset,
     }
 })();
 
 displayAndGameScoreModule.gameScoreKeeper();
-reload.playAgain();
-
-
-// let myModule = (function() {
-//     return {
-//         myFunction: function(owo) {
-//             console.log('my name is' + owo);
-//         }
-//     }
-// })();
-
-// console.log(myModule.myFunction('hello'));
+startPlaying.play();
+resetting.reset();

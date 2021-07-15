@@ -13,6 +13,7 @@
 
 html {
     font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Layout */
@@ -23,6 +24,8 @@ body {
     grid-template-columns: 1fr;
     font-size: 1.8rem;
     height: 100vh;
+    background-color: #004369;
+    color: #E5DDC8;
 }
 
 header {
@@ -38,9 +41,33 @@ header h1 {
     margin: 1rem;
 }
 
-header [type='button'] {
+/* header [type='button'] {
     margin: 1.2rem;
     padding: 0.8rem;
+} */
+
+header div {
+    display: flex;
+    flex-direction: row;
+}
+
+header div button {
+    padding: 0.6rem;
+    margin: 0.5rem;
+    font-size: 1.6rem;
+    border: 2px solid #E5DDC8;
+    background-color: #01949A;
+    color: #E5DDC8;
+    border-radius: 0.4rem;
+    outline: none;
+    font-weight: 600;
+}
+
+header div button:hover {
+    background-color: #E5DDC8;
+    color: #01949A;
+    border: 2px solid #01949A;
+    transition: 1s;
 }
 
 /* Tic Tac Toe */
@@ -52,7 +79,13 @@ main {
     align-items: center;
 }
 
+main h1 {
+    font-size: 2.5rem;
+    visibility: hidden;
+}
+
 .container {
+    visibility: hidden;
     margin-top: 3rem;
     display: grid;
     grid-template-rows: repeat(3, 100px);
@@ -64,11 +97,63 @@ main {
 }
 
 .box {
-    border: 1px solid purple;
+    border: 3px solid #DB1F48;
     font-size: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.box:nth-of-type(1) {
+    border-top: none;
+    border-left: none;
+}
+
+.box:nth-of-type(2) {
+    border-top: none;
+    border-left: none;
+}
+
+.box:nth-of-type(3) {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.box:nth-of-type(4) {
+    border-top: none;
+    border-left: none;
+}
+
+.box:nth-of-type(5) {
+    border-top: none;
+    border-left: none;
+}
+
+.box:nth-of-type(6) {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.box:nth-of-type(7) {
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+}
+
+.box:nth-of-type(8) {
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+}
+
+.box:nth-of-type(9) {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
 
 
